@@ -12,7 +12,7 @@ Clone the repository and download de Script
 
 ## Usage
 
-This first snnipet is aleady executed by the MIpsum Plugin
+This first snippet is aleady executed by the MIpsum Plugin
 ```javascript
 var mis = [].slice.call(document.querySelectorAll('[data-mario]'));
 mis.forEach(function (mie) {
