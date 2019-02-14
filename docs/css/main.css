@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches&subset=latin-ext');
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  height: 70px;
+  width: 100%;
+  background-color: #F3F3F3;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.github {
+  text-decoration: none;
+}
+
+.github img {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
+
+.cdnjs {
+  text-decoration: none;
+}
+
+.cdnjs span {
+  font-family: 'Staatliches', cursive;
+  color: #e95420;
+  font-size: 28px;
+  padding: 18px 8px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.mario--background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin-top: 70px;
+  width: 110%;
+  height: 110%;
+  background-image: url('../images/BG_Mario_World.jpg');
+  background-position: center top;
+  transition: background-position .2s ease;
+  z-index: -1;
+}
+
+.logo {
+  width: 250px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  margin-top: 110px;
+  text-align: center;
+  transition: margin-top .5s ease, position .5s ease, width .5s ease;
+}
+
+.logo.sticky {
+  position: fixed;
+  margin-top: 5px;
+  width: 150px;
+}
+
+.logo img {
+  max-width: 100%;
+}
+
+.logo span {
+  color: #000000;
+  font-family: 'Staatliches', cursive;
+  font-size: 20px;
+}
+
+.logo.sticky span {
+  display: none;
+}
+
+main {
+  padding-top: 220px;
+  text-align: center;
+  transition: padding-top .5s ease;
+}
+
+main.scrolled {
+  padding-top: 170px;
+}
+
+.text-generator {
+  margin: 70px 0;
+}
+
+main .mario-text {
+  width: 450px;
+  min-height: 150px;
+  border: 3px solid #333333;
+  padding: 15px;
+  color: #000000;
+  font-family: 'Staatliches', cursive;
+  font-size: 14px;
+  text-align: left;
+  display: inline-block;
+  background-color: #f1f1f1;
+  cursor: text;
+}
+
+main .settings {
+  width: 150px;
+  border: 2px solid #000000;
+  padding: 15px;
+  color: #FFFFFF;
+  font-family: 'Staatliches', cursive;
+  font-size: 16px;
+  text-align: left;
+  display: inline-block;
+  background-color: #333333;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+main .settings select {
+  vertical-align: top;
+  margin-top: 20px;
+  width: 150px;
+  height: 60px;
+  border: 2px solid #000000;
+  padding: 15px;
+  color: #000000;
+  font-family: 'Staatliches', cursive;
+  font-size: 16px;
+  text-align: left;
+  display: inline-block;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: none;
+}
+
+main .settings input {
+  vertical-align: top;
+  margin-top: 20px;
+  width: 150px;
+  height: 60px;
+  border: 2px solid #000000;
+  padding: 15px;
+  color: #333333;
+  font-family: 'Staatliches', cursive;
+  font-size: 20px;
+  text-align: left;
+  display: inline-block;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: none;
+}
+
+main .settings .mario-btn {
+  vertical-align: top;
+  margin-top: 20px;
+  width: 150px;
+  height: 60px;
+  border: 2px solid #000000;
+  padding: 15px;
+  color: #FFFFFF;
+  font-family: 'Staatliches', cursive;
+  font-size: 16px;
+  text-align: left;
+  display: inline-block;
+  background-color: #333333;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: none;
+}
+
+main .settings .mario-btn:hover {
+  border: 2px solid #333333;
+  color: #F3F3F3;
+  background-color: #555555;
+}
+
+main .settings .mario-btn:active {
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  background-color: #000000;
+}
+
+
+footer {
+  min-height: 150px;
+  width: 100%;
+  background-color: #F2F2F2;
+  text-align: center;
+}
+  
+footer p {
+  color: #333333;
+  font-family: 'Staatliches', cursive;
+  font-size: 22px;
+  padding: 15px;
+  margin: 0;
+}
+  
+footer .issue {
+  background-position: -1px -1px;
+  background-repeat: repeat-x;
+  background-size: 110% 110%;
+  border: 1px solid rgba(27,31,35,.2);
+  border-radius: .25em;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Staatliches', cursive;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 12px;
+  position: relative;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  background-color: #28a745;
+  text-decoration: none;
+  background-image: linear-gradient(-180deg,#34d058,#28a745 90%);
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 710px) {
+  main .mario-text {
+    width: 90%;
+  }
+  
+  main .settings {
+    width: 90%;
+    margin-top: 10px;
+  }
+  
+  main .settings select, main .settings input, main .settings .mario-btn {
+    margin-top: 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  header .github, header .cdnjs {
+    display: none;
+  }
+}
