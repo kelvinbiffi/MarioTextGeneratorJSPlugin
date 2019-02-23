@@ -4,7 +4,7 @@ MarioTextGeneratorJSPlugin is a JavaScript plugin for generate text paragraths a
 
 ## Installation
 
-[CDNScript](https://cdn.jsdelivr.net/gh/kelvinbiffi/MarioTextGeneratorJSPlugin/dist/MarioIpsum.js)
+[CDNScript](https://cdn.jsdelivr.net/gh/kelvinbiffi/MarioTextGeneratorJSPlugin@master/dist/MarioIpsum.js)
 
 or 
 
