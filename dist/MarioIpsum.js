@@ -1,8 +1,11 @@
 /**
+ * 
  * TYPE: PARAGRAPH or SENTENCE
+ * MODE: SHORT, MEDIUM or LONG (MODE is optional to deffine whether text would be shortest or longest, default value is set as MEDIUM)
  * LENGTH: LENGTH OF THE PARAGRAPH or SENTENSE YOU WANT
  * 
- * data-mario='TYPE|LENGTH'
+ * data-mario='TYPE|MODE|LENGTH'
+ * 
  */
 var MIpsum;
 
@@ -18,6 +21,7 @@ var MIpsum;
   MIpsum = function () {
     this.element = null;
     this.type = null;
+    this.mode = 'MEDIUM';
     this.length = null;
   };
   
@@ -30,9 +34,18 @@ var MIpsum;
   };
   
   /**
+   * Modes of text
+   */
+  MIpsum.prototype.modes = {
+    SHORT: 1.0,
+    MEDIUM: 1.5,
+    LONG: 2
+  };
+  
+  /**
    * Words Base
    */
-  MIpsum.prototype.words = ["Mario","is","Missing!","Super","Sunshine","Advance","Hotel","vs.","Donkey","Kong",
+  MIpsum.prototype.words = ["Mario","is","Missing!",,"Yoshi","Super","Sunshine","Advance","Hotel","vs.","Donkey","Kong",
   "New","Bros.","3D","World","Kart","Kart","Double","Dash!!","Wii","Party","Luigi's","Mansion",
   "Fortune","Street","Golf","Toadstool","Tour","Strikers","Charged","&","Sonic","at","the","Olympic",
   "Games","Saturday","Supercade","The","Show!","Mario","Manga","Adventures","Sports","Mix","Huh!?",
@@ -49,19 +62,20 @@ var MIpsum;
   "Way,","go,","bro!"];
   
   /**
-   * Validate whether all requirements would informed
+   * Validate whether all plugin parameters
    * 
    * @param {String} type Opitional
    * @param {Integer} length Opitional
+   * @param {String} mode Opitional
    */
-  MIpsum.prototype.validateDataQuery = function (type, length) {
+  MIpsum.prototype.validateDataQuery = function (type, length, mode) {
     if (!this.element) {
       console.warn('Element not set');
       return false;
     }
     
     if (!this.element.getAttribute('data-mario') && type && length) {
-      var query = type + '|' + length;
+      var query = type + '|' + length + (mode ? '|' + mode : '');
     } else {
       var query = this.element.getAttribute('data-mario');
     }
@@ -85,6 +99,16 @@ var MIpsum;
       console.warn('Second parameter LENGTH must be a integer number over then 0.', this.element);
       return false;
     }
+
+    if (query.length === 3) {
+      if (query[2] != 'SHORT' && query[2] != 'MEDIUM' && query[2] != 'LONG') {
+        console.warn('third parameter MODE must be SHORT or MEDIUM or LONG.', this.element);
+        return false;
+      }
+      this.mode = query[2];
+    } else {
+      this.mode = 'MEDIUM';
+    }
     
     this.type = query[0];
     this.length = query[1];
@@ -103,21 +127,8 @@ var MIpsum;
    * Generate a Paragraph
    */
   MIpsum.prototype.getParagrath = function () {
-    var max = Math.floor(184/this.length)*1.3, min = Math.floor(121/this.length)*1.3;
-    var lengthParagrath = Math.floor(Math.random() * (max - min) ) + min;
-    var i = 0;
-    var paragrath = [];
-    for (; i < lengthParagrath; i++) {
-      paragrath.push(this.getWord());
-    }
-    return paragrath.join(' ');
-  };
-  
-  /**
-   * Generate a Paragraph
-   */
-  MIpsum.prototype.getParagrath = function () {
-    var max = 183, min = 121;
+    var variant = this.modes[this.mode];
+    var max = Math.floor(100)*variant, min = Math.floor(70)*variant;
     var lengthParagrath = Math.floor(Math.random() * (max - min) ) + min;
     var i = 0;
     var paragrath = [];
@@ -131,8 +142,8 @@ var MIpsum;
    * Generate a Sentence
    */
   MIpsum.prototype.getSentence = function () {
-    var max = this.length*2, min = this.length;
-    var lengthSentence = Math.floor(Math.random() * (max - min) ) + min;
+    var variant = this.modes[this.mode];
+    var lengthSentence = this.length*variant;
     var i = 0;
     var sentence = [];
     for (; i < lengthSentence; i++) {
@@ -146,9 +157,10 @@ var MIpsum;
    * 
    * @param {String} type Opitional
    * @param {Integer} length Opitional
+   * @param {String} mode Opitional
    */
-  MIpsum.prototype.createText = function (type, length) {
-    if (this.validateDataQuery(type, length)) {
+  MIpsum.prototype.createText = function (type, length, mode) {
+    if (this.validateDataQuery(type, length, mode)) {
       var text = '';
       
       var i = 0;

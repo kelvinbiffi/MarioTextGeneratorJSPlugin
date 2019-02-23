@@ -40,8 +40,10 @@
     <div class="mario--background"></div>
     
     <div class="logo paralax">
-      <img src="images/super_mario_world_logo.png" />
-      <span>Text Generator</span>
+      <h1>
+        <img src="images/super_mario_world_logo.png" />
+        <span>Text Generator</span>
+      </h1>
     </div>
     
     <section class="text-generator">
@@ -53,12 +55,32 @@
                 <option value="PARAGRAPH">PARAGRAPH</option>
                 <option value="SENTENCE">SENTENCE</option>
             </select>
+            <select id="mode">
+                <option value="SHORT">SHORT</option>
+                <option value="MEDIUM" selected>MEDIUM</option>
+                <option value="LONG">LONG</option>
+            </select>
             <input id="length" type="number" value="2" />
             <button class="mario-btn">Generate Text</button>
           </div>
     </section>
     
-    
+    <section class="examples">
+      <h2>Examples</h2>
+      <div>
+        <span class="label--example">TEXTAREA<br><span>data-mario="PARAGRAPH|1|LONG"</span></span>
+        <textarea class="example-text" data-mario="PARAGRAPH|1|LONG"></textarea>
+        
+        <span class="label--example">INPUT<br><span>data-mario="SENTENCE|2"</span></span>
+        <input type="text" data-mario="SENTENCE|2" />
+      </div>
+      <!-- OR -->
+      <div>
+        
+        <span class="label--example">DIV<br><span>data-mario="PARAGRAPH|3|SHORT"</span></span>
+        <div class="example-text" data-mario="PARAGRAPH|3|SHORT"></div>
+      </div>
+    </section>
     
   </main>
   
@@ -67,7 +89,7 @@
       Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
     </p>
     <p>
-      <a class="issue" href="https://github.com/kelvinbiffi/MarioTextGeneratorJSPlugin/issues" target="_blank">
+      <a class="issue" href="https://github.com/kelvinbiffi/MarioTextGeneratorJSPlugin/issues/new" target="_blank">
         NEW ISSUE
       </a>
     </p>

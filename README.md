@@ -22,7 +22,14 @@ mis.forEach(function (mie) {
 });
 ```
 
-To use for specifics element follow the below pattern
+Parameters values:
+ * TYPE: PARAGRAPH or SENTENCE
+ * LENGTH: LENGTH OF THE PARAGRAPH or SENTENSE YOU WANT
+ * MODE: SHORT, MEDIUM or LONG (MODE is optional to deffine whether text would be shortest or longest, default value is set as MEDIUM)
+
+The pattern is TYPE LENGTH MODE, see the below example to know more or access the link [Text Generator](https://kelvinbiffi.github.io/MarioTextGeneratorJSPlugin/)
+ 
+To use for specifics element using javascript, follow the below pattern
 ```javascript
 // Interval to wait Plugin exists
 var waitMIpsum = setInterval(function () {
@@ -32,9 +39,17 @@ var waitMIpsum = setInterval(function () {
     // Usege to specific element
     var marioIpsum = new MIpsum;
     marioIpsum.element = document.querySelector('selector of element');
-    marioIpsum.createText('PARAGRAPH', 3);
+    marioIpsum.createText('PARAGRAPH', 3, 'MEDIUM');
   }
 }, 100);
+```
+
+To use for specifics element using html only, follow the below pattern
+```html
+<!--Interval to wait Plugin exists-->
+<textarea data-mario="SENTENCE|3|LONG"></textarea>
+<!-- OR -->
+<div data-mario="PARAGRAPH|3|SHORT"></div>
 ```
 
 ## Contributing

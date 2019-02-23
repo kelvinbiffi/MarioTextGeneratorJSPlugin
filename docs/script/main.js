@@ -38,9 +38,10 @@ window.addEventListener('DOMContentLoaded',function(){
     if (MIpsum) {
       var marioIpsum = new MIpsum;
       var type = document.querySelector('#type').value;
+      var mode = document.querySelector('#mode').value;
       var length = document.querySelector('#length').value;
       marioIpsum.element = document.querySelector('.mario-text');
-      marioIpsum.createText(type, length);
+      marioIpsum.createText(type, length, mode);
     }
   });
   

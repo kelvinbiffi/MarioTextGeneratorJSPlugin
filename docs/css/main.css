@@ -63,6 +63,10 @@ header {
   transition: margin-top .5s ease, position .5s ease, width .5s ease;
 }
 
+.logo h1 {
+  margin: 0;
+}
+
 .logo.sticky {
   position: fixed;
   margin-top: 5px;
@@ -97,7 +101,51 @@ main.scrolled {
   margin: 70px 0;
 }
 
-main .mario-text {
+main .example-text, main .examples {
+  vertical-align: top;
+}
+
+main .examples {
+  width: 90%;
+}
+
+main .examples h2{
+  color: #000000;
+  font-family: 'Staatliches', cursive;
+  font-size: 44px;
+}
+
+main .examples textarea {
+  min-height: 320px;
+}
+
+main .examples .label--example {
+  display: block;
+  padding: 5px;
+  color: #000000;
+  font-family: 'Staatliches', cursive;
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+main .examples .label--example span {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+}
+
+main .examples input{
+  border: 3px solid #333333;
+  padding: 15px;
+  margin: 5px;
+  color: #000000;
+}
+
+main .examples, main textare, main input, main div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+main .mario-text, main .example-text {
   width: 450px;
   min-height: 150px;
   border: 3px solid #333333;
@@ -109,6 +157,7 @@ main .mario-text {
   display: inline-block;
   background-color: #f1f1f1;
   cursor: text;
+  box-sizing: border-box;
 }
 
 main .settings {
@@ -193,6 +242,7 @@ main .settings .mario-btn:active {
 
 
 footer {
+  margin-top: 20px;
   min-height: 150px;
   width: 100%;
   background-color: #F2F2F2;
@@ -232,11 +282,11 @@ footer .issue {
 }
 
 @media only screen and (max-width: 710px) {
-  main .mario-text {
+  main .mario-text, main .example-text {
     width: 90%;
   }
   
-  main .settings {
+  main .settings, main .examples {
     width: 90%;
     margin-top: 10px;
   }
@@ -250,5 +300,9 @@ footer .issue {
 @media only screen and (max-width: 480px) {
   header .github, header .cdnjs {
     display: none;
+  }
+
+  main .examples .label--example span {
+    font-size: 14px;
   }
 }
