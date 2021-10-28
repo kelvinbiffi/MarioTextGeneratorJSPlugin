@@ -40,9 +40,16 @@ window.addEventListener('DOMContentLoaded',function(){
       var type = document.querySelector('#type').value;
       var mode = document.querySelector('#mode').value;
       var length = document.querySelector('#length').value;
-      marioIpsum.element = document.querySelector('.mario-text');
+      marioIpsum.element = document.querySelector('.mario-text__content');
       marioIpsum.createText(type, length, mode);
     }
+  });
+  
+  document.querySelector('.mario-text__btn-copy').addEventListener('click', function () {
+    var copyText = document.querySelector('.mario-text__content');
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
   });
   
   if (window.innerWidth < 480) {
