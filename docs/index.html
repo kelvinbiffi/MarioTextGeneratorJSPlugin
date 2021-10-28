@@ -14,6 +14,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="images/toad.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="images/toad.png" />
   <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/gh/kelvinbiffi/MarioTextGeneratorJSPlugin@master/dist/MarioIpsum.js"></script>
   <script src="script/main.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -49,8 +50,15 @@
     </div>
     
     <section class="text-generator">
-        <div class="mario-text">
-            Your text will appear here...
+          <div class="mario-text">
+            <textarea class="mario-text__content">
+              Your text will appear here...
+            </textarea>
+            <button class="mario-text__btn-copy">
+              <span class="material-icons">
+                content_copy
+                </span> Copy
+            </button>
           </div>
           <div class="settings">
             <select id="type">

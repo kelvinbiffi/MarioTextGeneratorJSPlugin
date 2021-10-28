@@ -160,6 +160,21 @@ main .mario-text, main .example-text {
   box-sizing: border-box;
 }
 
+main .mario-text__content {
+  border: none;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 300px;
+}
+
+main .mario-text__btn-copy {
+  width: 100%;
+  cursor: pointer;
+  font-family: 'Staatliches', cursive;
+  font-size: 14px;
+}
+
 main .settings {
   width: 150px;
   border: 2px solid #000000;
